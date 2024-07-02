@@ -10,6 +10,11 @@ public class DecimalToBinary {
     public static void convertDecToBin(int input) {
         Stack<Integer> st = new Stack<>();
 
+        if(input == 0){
+            System.out.println("0");
+            return;
+        }
+
         while (input != 0) {
             int remainder = input % 2;
             st.push(remainder);
