@@ -15,6 +15,15 @@ public class ValidAnagramHashMap {
     }
 
     public static boolean isAnagram(String s, String t) {
+
+        if(s.length() != t.length()){
+            return false;
+        }
+
+        if(s.isEmpty() || t.isEmpty()){
+            return false;
+        }
+        
         Map<Character, Integer> map = new HashMap<>(); // create an unordered map to store char frequencies
 
         char[] sCharArr = s.toCharArray();
