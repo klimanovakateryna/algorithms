@@ -1,17 +1,17 @@
 public class InvertBinaryTree {
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
 
-        TreeNode() {
+        public TreeNode() {
         }
 
-        TreeNode(int val) {
+        public TreeNode(int val) {
             this.val = val;
         }
 
-        TreeNode(int val, TreeNode left, TreeNode right) {
+        public TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
@@ -31,6 +31,36 @@ public class InvertBinaryTree {
         invertTree(root.right);
         return root;
     }
+
+    public static void traversal(TreeNode node){
+        if(node == null){
+            return;
+        }
+        System.out.print(node.val + " ");
+        traversal(node.left);
+        traversal(node.right);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(4);
+        root.left = new TreeNode(4);
+        root.right = new TreeNode(7);
+        root.left.left = new TreeNode(1);
+        root.left.right = new TreeNode(3);
+        root.right.left = new TreeNode(7);
+        root.right.right = new TreeNode(9);
+
+        System.out.println("Original tree: ");
+        traversal(root);
+        
+        System.out.println("\nInverted tree: ");
+        invertTree(root);
+        traversal(root);
+
+
+
+    }
+
 }
 
 
